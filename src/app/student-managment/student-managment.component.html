@@ -1,0 +1,34 @@
+<h2>Student Managment</h2>
+<form [formGroup]="studentForm" (ngSubmit)="submitForm(studentForm)">
+  <div class="form-group">
+    <label>First Name</label>
+    <input
+      type="text"
+      class="form-control"
+      [formControl]="studentForm.controls['firstName']"
+    />
+  </div>
+  <div class="form-group">
+    <label>Last Name</label>
+    <input
+      type="text"
+      class="form-control"
+      [formControl]="studentForm.controls['lastName']"
+    />
+  </div>
+  <div class="form-group">
+    <label>Pernson No</label>
+    <input
+      type="number"
+      class="form-control"
+      [formControl]="studentForm.controls['persNo']"
+    />
+  </div>
+  <button class="btn btn-success">Submit</button>
+</form>
+
+<br /><br />
+<app-student-item *ngIf="student" [student]="student"></app-student-item>
+<br /><br />
+
+<app-student-list [newStudent]="student"></app-student-list>
